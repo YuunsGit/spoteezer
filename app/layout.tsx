@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { cn } from "@/llb/utils";
-import { circularStd } from "@/fonts/fonts";
+import { cn } from "@/lib/utils";
+import { circularStd } from "@/assets/fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Spoteezer",
