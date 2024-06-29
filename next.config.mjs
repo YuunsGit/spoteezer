@@ -20,6 +20,17 @@ const nextConfig = {
     fileLoaderRule.exclude = /\.svg$/i
     return config
   },
+  reactStrictMode: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'e-cdns-images.dzcdn.net',
+        port: '',
+        pathname: '/images/**',
+      },
+    ]
+  }
 };
 
 export default nextConfig;

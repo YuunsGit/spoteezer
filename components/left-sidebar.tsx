@@ -10,7 +10,6 @@ const playlists = [
   "Insta Hits",
   "Your Top Songs 2021",
   "Mellow Songs",
-  "ratatatatatatatautitotatatatatamutiotatata",
   "Anime Lofi & Chillhop Music",
   "BG Afro “Select” Vibes",
   "Afro “Select” Vibes",
@@ -48,7 +47,7 @@ export default function LeftSidebar() {
             </li>
             <li>
               <Link
-                href="/library"
+                href="/"
                 className="flex items-center gap-6 text-lg font-bold leading-normal transition-colors hover:text-white"
               >
                 <LibraryIcon className="size-8 p-1" />
@@ -76,13 +75,10 @@ export default function LeftSidebar() {
       </div>
       <ul className="pretty-scroll mt-6 overflow-y-auto overscroll-contain transition-all">
         {playlists.map((playlist) => (
-          <li
-            key={playlist}
-            className="mx-8 mb-4 overflow-hidden [overflow-wrap:anywhere]"
-          >
+          <li key={playlist} className="mx-8 mb-4">
             <Link
               href=""
-              className="line-clamp-1 text-lg leading-normal transition-colors hover:text-white"
+              className="line-clamp-1 overflow-hidden break-all text-lg leading-normal transition-colors hover:text-white"
             >
               {playlist}
             </Link>
