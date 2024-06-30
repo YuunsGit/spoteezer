@@ -23,7 +23,7 @@ export default function LeftSidebar() {
   return (
     <section
       aria-label="Left sidebar"
-      className="flex w-[310px] flex-col overflow-hidden bg-black pt-6 [grid-area:left-sidebar]"
+      className="flex w-[250px] flex-col overflow-hidden bg-black pt-6 [grid-area:left-sidebar]"
     >
       <div>
         <SidebarTabs />
