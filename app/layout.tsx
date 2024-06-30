@@ -7,6 +7,7 @@ import LeftSidebar from "@/components/left-sidebar";
 import BackgroundGradient from "@/components/bg-gradient";
 import Header from "@/components/header";
 import RightSidebar from "@/components/right-sidebar";
+import Player from "@/components/player";
 
 export const metadata: Metadata = {
   title: "Spoteezer",
@@ -29,13 +30,14 @@ export default function RootLayout({
         <div className="relative isolate grid h-screen grid-cols-[auto_1fr] grid-rows-[1fr_auto] [grid-template-areas:'left-sidebar_main_right-sidebar''player_player_player']">
           <LeftSidebar />
           <BackgroundGradient />
-          <main className="@container pretty-scroll [grid-area=main] max-w-[1955px] overflow-y-auto overscroll-contain text-white">
+          <main className="@container pretty-scroll max-w-[1955px] overflow-y-auto overscroll-contain text-white [grid-area:main]">
             <Header>
               <></>
             </Header>
             {children}
           </main>
           <RightSidebar />
+          <Player />
         </div>
       </body>
     </html>

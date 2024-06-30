@@ -16,7 +16,7 @@ export default function RightSidebar() {
   return (
     <aside
       aria-label="Right sidebar"
-      className="w-[270px] overflow-hidden bg-black [grid-area:right-sidebar]"
+      className="w-[270px] overflow-hidden bg-black shadow-[0_4px_60px_rgb(0_0_0_/_50%)] [grid-area:right-sidebar]"
     >
       <div className="flex items-center justify-between p-2 pl-4">
         <h2 className="font-bold text-white">Friend activity</h2>
@@ -48,6 +48,7 @@ export default function RightSidebar() {
         </p>
         <Link
           href=""
+          draggable="false"
           className="mx-auto block w-fit rounded-full bg-white px-8 py-3.5 font-bold text-black hover:scale-105 hover:bg-gray-50 active:scale-100 active:opacity-50"
         >
           Settings

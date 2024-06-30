@@ -12,6 +12,7 @@ export default function HomeSection({ title }: Props) {
         <h2 className="text-2xl font-bold leading-tight">{title}</h2>
         <Link
           href=""
+          draggable="false"
           className="text-xs font-bold uppercase tracking-widest text-foreground hover:underline"
         >
           See all

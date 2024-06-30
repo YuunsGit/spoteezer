@@ -4,13 +4,12 @@ import PlayNowIcon from "@/assets/icons/play-now.svg";
 
 export default function PlaylistCard() {
   return (
-    <div className="hover:bg-secondary group relative w-fit overflow-hidden rounded-md bg-[#181818] p-4 transition-colors duration-300">
-      <div className="relative mb-4">
+    <div className="hover:bg-secondary bg-spotidark group relative w-fit overflow-hidden rounded-md p-4 transition-colors duration-300">
+      <div className="relative mb-4 overflow-hidden rounded shadow-[0_8px_24px_rgb(0_0_0_/_50%)]">
         <Image
           src="https://e-cdns-images.dzcdn.net/images/playlist/3f37965cca5eb8ab006ae60183ab81ab/250x250-000000-80-0-0.jpg"
           alt="Playlist"
           draggable="false"
-          className="rounded"
           width={200}
           height={200}
         />

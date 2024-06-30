@@ -12,6 +12,7 @@ const config: Config = {
         background: "#121212",
         foreground: "#B3B3B3",
         secondary: "#282828",
+        spotidark: "#181818",
         spotigreen: "#1ed760",
       },
       fontFamily: {
