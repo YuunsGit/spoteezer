@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { SVGProps } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -14,8 +14,8 @@ import LibraryActiveIcon from "@/assets/icons/library-active.svg";
 interface Props {
   children: React.ReactNode;
   pathname: string;
-  icon: any;
-  activeIcon: any;
+  icon: React.FC<SVGProps<SVGElement>>;
+  activeIcon: React.FC<SVGProps<SVGElement>>;
 }
 
 function Tab({
@@ -30,7 +30,10 @@ function Tab({
     <Link
       href="/"
       draggable={false}
-      className="flex h-10 items-center gap-4 px-4 text-sm font-bold leading-normal transition-colors hover:text-white"
+      className={cn(
+        "flex h-10 items-center gap-4 px-4 text-sm font-bold leading-normal transition-colors hover:text-white",
+        currentPathname === pathname && "text-white",
+      )}
       {...(currentPathname === pathname && { "aria-current": "page" })}
     >
       <Icon

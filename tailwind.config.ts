@@ -17,6 +17,15 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-circular-std)"],
       },
+      containers: {
+        "3col": "52rem",
+        "4col": "66rem",
+        "5col": "85rem",
+        "6col": "98rem",
+        "7col": "110rem",
+        "8col": "123rem",
+        "9col": "136rem",
+      },
     },
   },
   plugins: [require("@tailwindcss/container-queries")],
