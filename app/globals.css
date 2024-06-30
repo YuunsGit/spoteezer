@@ -6,9 +6,8 @@
   scrollbar-color: transparent transparent;
   transition-delay: 1s;
 
-
   &:hover {
-    scrollbar-color: #B3B3B3 transparent;
+    scrollbar-color: #6A6A6A transparent;
     transition-delay: 0s;
   }
 
@@ -21,7 +20,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #B3B3B3;
+    background-color: #6A6A6A;
     border-radius: 100%;
   }
 }

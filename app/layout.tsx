@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import React from "react";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { circularStd } from "@/assets/fonts/fonts";
@@ -21,13 +22,13 @@ export default function RootLayout({
       <body
         className={cn(
           circularStd.variable,
-          "box-border bg-background font-sans leading-[1.6] text-foreground antialiased",
+          "box-border overflow-y-hidden overscroll-y-none bg-background font-sans leading-[1.6] text-foreground antialiased",
         )}
       >
         <div className="relative isolate grid h-screen grid-cols-[auto_1fr] grid-rows-[1fr_auto] [grid-template-areas:'left-sidebar_main_right-sidebar''player_player_player']">
           <LeftSidebar />
           <BackgroundGradient />
-          <main>
+          <main className="@container pretty-scroll overflow-y-auto overscroll-contain text-white">
             <Header>
               <></>
             </Header>

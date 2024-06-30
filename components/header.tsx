@@ -49,7 +49,9 @@ export default function Header({ children }: Props) {
             height={28}
           />
         </figure>
-        <span className="text-sm font-bold">Yunus Emre Kepenek</span>
+        <span className="line-clamp-1 max-w-28 overflow-hidden break-all text-sm font-bold">
+          Yunus Emre Kepenek
+        </span>
         <ExpandIcon role="img" aria-hidden className="size-4" />
       </button>
     </header>
