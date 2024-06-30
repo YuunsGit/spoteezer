@@ -16,7 +16,7 @@ export default function Header({ children }: Props) {
   return (
     <header
       aria-label="Header bar and user profile"
-      className="sticky top-0 flex h-16 items-center justify-between px-8 py-4"
+      className="sticky top-0 flex h-16 items-center justify-between px-4 py-4 lg:px-8"
     >
       <div className="flex gap-4">
         <button
@@ -29,7 +29,7 @@ export default function Header({ children }: Props) {
         <button
           aria-label="Go forward"
           onClick={() => router.forward()}
-          className="flex size-8 items-center justify-center rounded-full bg-black bg-opacity-70 hover:text-white"
+          className="hidden size-8 items-center justify-center rounded-full bg-black bg-opacity-70 hover:text-white lg:flex"
         >
           <ArrowIcon aria-hidden role="img" className="size-6" />
         </button>
@@ -38,7 +38,7 @@ export default function Header({ children }: Props) {
       <button
         aria-label="User profile"
         type="button"
-        className="hover:bg-secondary flex items-center gap-2 rounded-full bg-black p-0.5 pr-3 text-white"
+        className="hover:bg-secondary flex items-center gap-2 rounded-full bg-black p-0.5 text-white lg:pr-1.5"
       >
         <figure title="Yunus Emre Kepenek">
           <Image
@@ -49,10 +49,10 @@ export default function Header({ children }: Props) {
             height={28}
           />
         </figure>
-        <span className="line-clamp-1 max-w-28 overflow-hidden break-all text-sm font-bold">
+        <span className="hidden max-w-28 overflow-hidden break-all text-sm font-bold lg:line-clamp-1">
           Yunus Emre Kepenek
         </span>
-        <ExpandIcon role="img" aria-hidden className="size-4" />
+        <ExpandIcon role="img" aria-hidden className="hidden size-4 lg:block" />
       </button>
     </header>
   );
