@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         background: "#121212",
         foreground: "#B3B3B3",
+        secondary: "#282828",
       },
       fontFamily: {
         sans: ["var(--font-circular-std)"],

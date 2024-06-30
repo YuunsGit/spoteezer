@@ -21,7 +21,7 @@ export default function RootLayout({
       <body
         className={cn(
           circularStd.variable,
-          "box-border bg-background font-sans text-foreground antialiased",
+          "box-border bg-background font-sans leading-[1.6] text-foreground antialiased",
         )}
       >
         <div className="relative isolate grid h-screen grid-cols-[auto_1fr] grid-rows-[1fr_auto] [grid-template-areas:'left-sidebar_main_right-sidebar''player_player_player']">
