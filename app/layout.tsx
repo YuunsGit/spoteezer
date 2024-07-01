@@ -29,9 +29,7 @@ export default async function RootLayout({
       >
         <div className="relative isolate grid h-screen grid-cols-[auto_1fr] grid-rows-[auto_1fr_auto] [grid-template-areas:'left-sidebar_header_right-sidebar''left-sidebar_main_right-sidebar''player_player_player']">
           <LeftSidebar />
-          <Header>
-            <></>
-          </Header>
+          <Header />
           <main className="pretty-scroll relative overflow-y-auto overscroll-contain text-white @container [grid-area:main]">
             <BackgroundGradient />
             <section className="max-w-[1955px] px-4 pt-6 lg:px-8">

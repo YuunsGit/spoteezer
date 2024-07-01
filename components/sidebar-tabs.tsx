@@ -28,7 +28,7 @@ function Tab({
 
   return (
     <Link
-      href="/"
+      href={pathname}
       draggable={false}
       className={cn(
         "flex h-10 items-center gap-4 px-4 text-sm font-bold leading-normal transition-colors hover:text-white",
@@ -76,11 +76,7 @@ export default function SidebarTabs() {
           </Tab>
         </li>
         <li className="px-2">
-          <Tab
-            icon={LibraryIcon}
-            activeIcon={LibraryActiveIcon}
-            pathname="/library"
-          >
+          <Tab icon={LibraryIcon} activeIcon={LibraryActiveIcon} pathname="/">
             Library
           </Tab>
         </li>

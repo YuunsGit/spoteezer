@@ -4,12 +4,10 @@ import UserIcon from "@/assets/icons/user.svg";
 import Image from "next/image";
 import NavButtons from "@/components/nav-buttons";
 import { UserResponse } from "@/app/types";
+import HeaderWrapper from "@/components/header-wrapper";
+import SearchBar from "@/components/search-bar";
 
-interface Props {
-  children: React.ReactNode;
-}
-
-export default async function Header({ children }: Props) {
+export default async function Header() {
   let user: UserResponse | null = null;
 
   try {
@@ -25,12 +23,9 @@ export default async function Header({ children }: Props) {
   }
 
   return (
-    <header
-      aria-label="Header bar and user profile"
-      className="z-40 flex h-16 items-center justify-between bg-[#3333A3] px-4 py-4 [grid-area:header] lg:px-8"
-    >
+    <HeaderWrapper>
       <NavButtons />
-      {children}
+      <SearchBar />
       <button
         aria-label="User profile"
         type="button"
@@ -56,6 +51,6 @@ export default async function Header({ children }: Props) {
         </span>
         <ExpandIcon role="img" aria-hidden className="hidden size-4 lg:block" />
       </button>
-    </header>
+    </HeaderWrapper>
   );
 }

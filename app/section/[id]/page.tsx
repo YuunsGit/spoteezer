@@ -3,7 +3,7 @@ import PlaylistCard from "@/components/playlist-card";
 
 export default async function ListAll({ params }: { params: { id: string } }) {
   const playlists: ChartPlaylistsResponse = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + `/chart/${params.id}/playlists/&limit=16`,
+    `${process.env.NEXT_PUBLIC_API_URL}/chart/${params.id}/playlists/&limit=16`,
   ).then((res) => res.json());
 
   return (

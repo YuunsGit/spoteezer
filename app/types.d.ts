@@ -32,22 +32,21 @@ export interface Playlist {
   tracklist: string;
   creation_date: Date;
   md5_image: string;
-  picture_type: PictureTypeEnum;
+  picture_type: string;
   user: User;
-  type: PictureTypeEnum;
-}
-
-export enum PictureTypeEnum {
-  Playlist = "playlist",
+  type: string;
 }
 
 export interface User {
   id: number;
   name: string;
   tracklist: string;
-  type: UserType;
+  type: string;
 }
 
-export enum UserType {
-  User = "user",
+export interface SearchResponse {
+  data: Playlist[];
+  total: number;
+  prev?: string;
+  next?: string;
 }

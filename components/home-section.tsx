@@ -21,7 +21,7 @@ export default function HomeSection({ title, playlists, sectionId }: Props) {
           See all
         </Link>
       </div>
-      <div className="mt-5 grid grid-cols-9 gap-x-[18px] @3xl:gap-x-6">
+      <div className="mt-5 grid grid-cols-2 grid-rows-[1fr_0_0_0_0] gap-x-[18px] overflow-y-hidden @3xl:gap-x-6 @3col:grid-cols-3 @4col:grid-cols-4 @5col:grid-cols-5 @6col:grid-cols-6 @7col:grid-cols-7 @8col:grid-cols-8 @9col:grid-cols-9">
         {playlists.map((pl) => (
           <PlaylistCard key={pl.id} playlist={pl} />
         ))}

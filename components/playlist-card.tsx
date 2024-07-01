@@ -15,7 +15,6 @@ export default function PlaylistCard({ playlist }: Props) {
           src={playlist.picture_medium}
           alt="Playlist"
           draggable="false"
-          quality={80}
           priority
           width={200}
           height={200}
@@ -27,7 +26,7 @@ export default function PlaylistCard({ playlist }: Props) {
           <PlayNowIcon role="img" aria-hidden className="size-6 text-black" />
         </button>
       </div>
-      <div className="flex min-h-16 items-center justify-between">
+      <div className="flex min-h-16 justify-between">
         <Link
           href=""
           draggable="false"
