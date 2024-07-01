@@ -27,14 +27,14 @@ export default function RootLayout({
           "box-border overflow-y-hidden overscroll-y-none bg-background font-sans leading-[1.6] text-foreground antialiased",
         )}
       >
-        <div className="relative isolate grid h-screen grid-cols-[auto_1fr] grid-rows-[1fr_auto] [grid-template-areas:'left-sidebar_main_right-sidebar''player_player_player']">
+        <div className="relative isolate grid h-screen grid-cols-[auto_1fr] grid-rows-[auto_1fr_auto] [grid-template-areas:'left-sidebar_header_right-sidebar''left-sidebar_main_right-sidebar''player_player_player']">
           <LeftSidebar />
-          <BackgroundGradient />
+          <Header>
+            <></>
+          </Header>
           <main className="@container pretty-scroll max-w-[1955px] overflow-y-auto overscroll-contain text-white [grid-area:main]">
-            <Header>
-              <></>
-            </Header>
-            {children}
+            <BackgroundGradient />
+            <section className="px-4 pt-6 lg:px-8">{children}</section>
           </main>
           <RightSidebar />
           <Player />

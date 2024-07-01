@@ -16,7 +16,7 @@ export default function Header({ children }: Props) {
   return (
     <header
       aria-label="Header bar and user profile"
-      className="sticky top-0 flex h-16 items-center justify-between px-4 py-4 lg:px-8"
+      className="z-40 flex h-16 items-center justify-between px-4 py-4 [grid-area:header] lg:px-8"
     >
       <div className="flex gap-4">
         <button
