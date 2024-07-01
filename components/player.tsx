@@ -50,7 +50,7 @@ export default function Player() {
     if (player) {
       setProgress(0);
       progressTracker.current = setInterval(() => {
-        setProgress(Math.round((player.seek() / player.duration()) * 100) + 3);
+        setProgress(Math.round((player.seek() / player.duration()) * 100));
       }, 1000);
     }
     return () => clearInterval(progressTracker.current);
@@ -59,6 +59,20 @@ export default function Player() {
   useEffect(() => {
     if (volume !== undefined) Howler.volume(volume / 100);
   }, [volume]);
+
+  useEffect(() => {
+    const handleSpacebarPress = (event: KeyboardEvent) => {
+      if (event.code === "Space") {
+        event.preventDefault();
+        handlePlayButton();
+      }
+    };
+
+    window.addEventListener("keydown", handleSpacebarPress);
+    return () => {
+      window.removeEventListener("keydown", handleSpacebarPress);
+    };
+  }, [playing, currentPlaylistId, pause, keepPlaying, handlePlayButton]);
 
   return (
     <footer
@@ -143,7 +157,7 @@ export default function Player() {
               role="switch"
               aria-checked="false"
               aria-label="Skip back"
-              className="flex size-8 items-center justify-center text-[hsla(0,0%,100%,.7)] hover:text-white disabled:pointer-events-none disabled:opacity-50"
+              className="flex size-8 items-center justify-center text-[hsla(0,0%,100%,.7)] outline-none ring-0 hover:text-white disabled:pointer-events-none disabled:opacity-50"
             >
               <SkipBackIcon role="img" aria-hidden className="size-4" />
             </button>
@@ -157,7 +171,7 @@ export default function Player() {
               pivot === tracks.length - 1
             }
             aria-label="Play"
-            className="flex size-8 items-center justify-center rounded-full bg-white text-black hover:scale-105 disabled:pointer-events-none disabled:opacity-50"
+            className="flex size-8 items-center justify-center rounded-full bg-white text-black outline-none ring-0 hover:scale-105 disabled:pointer-events-none disabled:opacity-50"
           >
             {playing ? (
               <PauseIcon role="img" aria-hidden className="size-5" />
@@ -172,14 +186,14 @@ export default function Player() {
               role="switch"
               aria-checked="false"
               aria-label="Skip forward"
-              className="flex size-8 items-center justify-center text-[hsla(0,0%,100%,.7)] hover:text-white disabled:pointer-events-none disabled:opacity-50"
+              className="flex size-8 items-center justify-center text-[hsla(0,0%,100%,.7)] outline-none ring-0 hover:text-white disabled:pointer-events-none disabled:opacity-50"
             >
               <SkipForwardIcon role="img" aria-hidden className="size-4" />
             </button>
             <button
               role="switch"
               aria-checked="false"
-              aria-label="REpeat"
+              aria-label="Repeat"
               className="flex size-8 items-center justify-center text-[hsla(0,0%,100%,.7)] hover:text-white disabled:pointer-events-none disabled:opacity-50"
             >
               <RepeatIcon role="img" aria-hidden className="size-4" />
@@ -187,7 +201,13 @@ export default function Player() {
           </div>
         </div>
         <div className="flex items-center justify-center gap-2">
-          <span className="text-xs">0:00</span>
+          <span className="text-xs">
+            {player
+              ? new Date(Math.round(player?.seek()) * 1000)
+                  .toISOString()
+                  .substr(14, 5)
+              : "00:00"}
+          </span>
           <Slider.Root
             className="group relative flex h-1 w-full touch-none select-none items-center disabled:pointer-events-none"
             name="Progress"
@@ -207,7 +227,7 @@ export default function Player() {
               />
             )}
           </Slider.Root>
-          <span className="text-xs">3:46</span>
+          <span className="text-xs">00:30</span>
         </div>
       </div>
       <div className="flex flex-1 items-center justify-end">
