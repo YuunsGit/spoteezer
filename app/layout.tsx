@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: "Definitely not related to Spotify or Deezer.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -32,9 +32,11 @@ export default function RootLayout({
           <Header>
             <></>
           </Header>
-          <main className="@container pretty-scroll max-w-[1955px] overflow-y-auto overscroll-contain text-white [grid-area:main]">
+          <main className="pretty-scroll relative overflow-y-auto overscroll-contain text-white @container [grid-area:main]">
             <BackgroundGradient />
-            <section className="px-4 pt-6 lg:px-8">{children}</section>
+            <section className="max-w-[1955px] px-4 pt-6 lg:px-8">
+              {children}
+            </section>
           </main>
           <RightSidebar />
           <Player />
