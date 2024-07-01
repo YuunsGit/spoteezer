@@ -4,7 +4,7 @@ import { SearchResponse } from "@/app/types";
 import PlaylistCard from "@/components/playlist-card";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { getSearchResults } from "@/app/actions";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +23,7 @@ export default function Search() {
   if (!query || !results?.data) return null;
 
   return (
-    <>
+    <Suspense>
       <div className="flex justify-between">
         <h2 className="text-2xl font-bold leading-tight">Top results</h2>
         <div className="flex items-center justify-end gap-4">
@@ -62,6 +62,6 @@ export default function Search() {
           <PlaylistCard playlist={pl} key={pl.id} />
         ))}
       </div>
-    </>
+    </Suspense>
   );
 }
