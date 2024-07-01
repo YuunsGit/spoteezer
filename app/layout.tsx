@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import React from "react";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -12,6 +12,10 @@ import Player from "@/components/player";
 export const metadata: Metadata = {
   title: "Spoteezer",
   description: "Definitely not related to Spotify or Deezer.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#A238FF",
 };
 
 export default async function RootLayout({

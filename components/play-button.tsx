@@ -16,7 +16,7 @@ interface Props
   playlistId: number;
 }
 
-export default function PlayButton(props: Props) {
+export default function PlayButton({ playlistId, ...rest }: Props) {
   const currentPlaylistId = usePlayer((state) => state.currentPlaylist);
   const playing = usePlayer((state) => state.playing);
 
@@ -27,7 +27,7 @@ export default function PlayButton(props: Props) {
   const setPlaylistId = usePlayer((state) => state.setPlaylist);
 
   const handleClick = () => {
-    if (currentPlaylistId === props.playlistId) {
+    if (currentPlaylistId === playlistId) {
       playing ? pause() : keepPlaying();
     } else {
       playPlaylist();
@@ -35,9 +35,9 @@ export default function PlayButton(props: Props) {
   };
 
   const playPlaylist = async () => {
-    const tracklist: TracklistResponse = await getTracklist(props.playlistId);
+    const tracklist: TracklistResponse = await getTracklist(playlistId);
     stop();
-    setPlaylistId(props.playlistId);
+    setPlaylistId(playlistId);
     setTracks(tracklist.data);
   };
 
@@ -45,16 +45,16 @@ export default function PlayButton(props: Props) {
     <button
       aria-label="Start playing"
       onClick={handleClick}
-      {...props}
+      {...rest}
       className={cn(
-        props.className,
+        rest.className,
         "text-black",
-        currentPlaylistId === props.playlistId &&
+        currentPlaylistId === playlistId &&
           playing &&
           "translate-y-0 opacity-100",
       )}
     >
-      {currentPlaylistId === props.playlistId && playing ? (
+      {currentPlaylistId === playlistId && playing ? (
         <PauseIcon role="img" aria-hidden className="size-6" />
       ) : (
         <PlayIcon role="img" aria-hidden className="size-6" />

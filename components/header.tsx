@@ -6,6 +6,7 @@ import NavButtons from "@/components/nav-buttons";
 import { UserResponse } from "@/app/types";
 import HeaderWrapper from "@/components/header-wrapper";
 import SearchBar from "@/components/search-bar";
+import Link from "next/link";
 
 export default async function Header() {
   let user: UserResponse | null = null;
@@ -26,9 +27,11 @@ export default async function Header() {
     <HeaderWrapper>
       <NavButtons />
       <SearchBar />
-      <button
+      <Link
+        href="https://yunusemre.dev/"
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label="User profile"
-        type="button"
         className="flex items-center gap-2 rounded-full bg-black p-0.5 text-white hover:bg-secondary lg:pr-1.5"
       >
         <figure title="Yunus Emre Kepenek">
@@ -50,7 +53,7 @@ export default async function Header() {
           {(user && user.name) || "Guest"}
         </span>
         <ExpandIcon role="img" aria-hidden className="hidden size-4 lg:block" />
-      </button>
+      </Link>
     </HeaderWrapper>
   );
 }
