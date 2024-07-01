@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import React from "react";
+import React, { Suspense } from "react";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { circularStd } from "@/assets/fonts/fonts";
@@ -36,9 +36,11 @@ export default async function RootLayout({
           <Header />
           <main className="pretty-scroll relative overflow-y-auto overscroll-contain text-white @container [grid-area:main]">
             <BackgroundGradient />
-            <section className="max-w-[1955px] px-4 py-6 lg:px-8">
-              {children}
-            </section>
+            <Suspense>
+              <section className="max-w-[1955px] px-4 py-6 lg:px-8">
+                {children}
+              </section>
+            </Suspense>
           </main>
           <RightSidebar />
           <Player />

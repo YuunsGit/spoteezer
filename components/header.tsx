@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ExpandIcon from "@/assets/icons/expand.svg";
 import UserIcon from "@/assets/icons/user.svg";
 import Image from "next/image";
@@ -26,7 +26,9 @@ export default async function Header() {
   return (
     <HeaderWrapper>
       <NavButtons />
-      <SearchBar />
+      <Suspense>
+        <SearchBar />
+      </Suspense>
       <Link
         href="https://yunusemre.dev/"
         target="_blank"
