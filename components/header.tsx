@@ -27,7 +27,7 @@ export default async function Header({ children }: Props) {
   return (
     <header
       aria-label="Header bar and user profile"
-      className="z-40 flex h-16 items-center justify-between px-4 py-4 [grid-area:header] lg:px-8"
+      className="z-40 flex h-16 items-center justify-between bg-[#3333A3] px-4 py-4 [grid-area:header] lg:px-8"
     >
       <NavButtons />
       {children}

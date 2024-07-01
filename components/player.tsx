@@ -16,7 +16,7 @@ import MuteIcon from "@/assets/icons/mute.svg";
 
 export default function Player() {
   return (
-    <footer className="bg-spotidark border-secondary z-10 flex h-[90px] w-full items-center border-t px-4 [grid-area:player]">
+    <footer className="z-10 flex h-[90px] w-full items-center border-t border-secondary bg-spotidark px-4 [grid-area:player]">
       <div className="flex flex-1 items-center">
         <div className="group relative flex-shrink-0 shadow-[0_0_10px_rgb(0_0_0_/_30%)]">
           <Image
@@ -69,7 +69,7 @@ export default function Player() {
           <FavoriteIcon role="img" aria-hidden className="size-4" />
         </button>
       </div>
-      <div className="w-2/5 flex-shrink-0">
+      <div className="w-2/5 max-w-[722px] flex-shrink-0">
         <div className="mb-2 flex items-center justify-center gap-4">
           <div className="flex items-center justify-center gap-2">
             <button
@@ -112,7 +112,7 @@ export default function Player() {
           </div>
         </div>
         <div className="flex items-center justify-center gap-2">
-          <span className="text-[11px]">0:00</span>
+          <span className="text-xs">0:00</span>
           <Slider.Root
             className="group relative flex h-1 w-full touch-none select-none items-center"
             name="Progress"
@@ -121,14 +121,14 @@ export default function Player() {
             step={0.1}
           >
             <Slider.Track className="relative h-1 grow rounded-full bg-[hsla(0,0%,100%,.3)]">
-              <Slider.Range className="group-hover:bg-spotigreen absolute h-full rounded-full bg-white" />
+              <Slider.Range className="absolute h-full rounded-full bg-white group-hover:bg-spotigreen" />
             </Slider.Track>
             <Slider.Thumb
               className="hover:bg-violet3 block size-3 rounded-[10px] bg-white opacity-0 shadow-[0_2px_4px_0_rgb(0_0_0_/_50%)] focus:outline-none group-hover:opacity-100"
               aria-label="Volume"
             />
           </Slider.Root>
-          <span className="text-[11px]">3:46</span>
+          <span className="text-xs">3:46</span>
         </div>
       </div>
       <div className="flex flex-1 items-center justify-end">
@@ -160,7 +160,7 @@ export default function Player() {
             step={0.1}
           >
             <Slider.Track className="relative h-1 grow rounded-full bg-[hsla(0,0%,100%,.3)]">
-              <Slider.Range className="group-hover:bg-spotigreen absolute h-full rounded-full bg-white" />
+              <Slider.Range className="absolute h-full rounded-full bg-white group-hover:bg-spotigreen" />
             </Slider.Track>
             <Slider.Thumb
               className="hover:bg-violet3 block size-3 rounded-[10px] bg-white opacity-0 shadow-[0_2px_4px_0_rgb(0_0_0_/_50%)] focus:outline-none group-hover:opacity-100"

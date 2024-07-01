@@ -3,13 +3,7 @@
 @tailwind utilities;
 
 .pretty-scroll {
-  scrollbar-color: transparent transparent;
-  transition-delay: 1s;
-
-  &:hover {
-    scrollbar-color: hsla(0,0%,100%,.3) transparent;
-    transition-delay: 0s;
-  }
+  scrollbar-color: hsla(0,0%,100%,.3) transparent;
 
   &::-webkit-scrollbar-track {
     background: transparent;

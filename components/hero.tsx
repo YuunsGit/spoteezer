@@ -28,7 +28,7 @@ export default function Hero({ playlists }: Props) {
             />
             <div className="flex w-full items-center justify-between px-4">
               <Link
-                href={`/playlist/${pl.id}`}
+                href=""
                 draggable="false"
                 title={pl.title}
                 className="font-bold"

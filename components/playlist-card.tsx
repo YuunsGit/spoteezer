@@ -34,8 +34,10 @@ export default function PlaylistCard({ playlist }: Props) {
           title={playlist.title}
           className="font-bold"
         >
-          <p>{playlist.title}</p>
-          <p className="mt-2 line-clamp-2 overflow-hidden text-sm font-normal text-foreground">
+          <p className="line-clamp-1 overflow-hidden break-all">
+            {playlist.title}
+          </p>
+          <p className="mt-1 line-clamp-2 overflow-hidden break-all text-sm font-normal text-foreground">
             {playlist.user.name}
           </p>
           <span aria-hidden className="absolute inset-0" />
