@@ -57,11 +57,20 @@ export default function Search() {
           </Link>
         </div>
       </div>
-      <div className="mt-5 grid grid-cols-2 gap-[18px] @3xl:gap-6 @3col:grid-cols-3 @4col:grid-cols-4 @5col:grid-cols-5 @6col:grid-cols-6 @7col:grid-cols-7 @8col:grid-cols-8 @9col:grid-cols-9">
-        {results.data.map((pl) => (
-          <PlaylistCard playlist={pl} key={pl.id} />
-        ))}
-      </div>
+
+      {results.total === 0 ? (
+        <section className="absolute inset-0 flex items-center justify-center">
+          <div>
+            <h2 className="text-2xl">No result.</h2>
+          </div>
+        </section>
+      ) : (
+        <div className="mt-5 grid grid-cols-2 gap-[18px] @3xl:gap-6 @3col:grid-cols-3 @4col:grid-cols-4 @5col:grid-cols-5 @6col:grid-cols-6 @7col:grid-cols-7 @8col:grid-cols-8 @9col:grid-cols-9">
+          {results.data.map((pl) => (
+            <PlaylistCard playlist={pl} key={pl.id} />
+          ))}
+        </div>
+      )}
     </>
   );
 }
