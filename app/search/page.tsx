@@ -5,7 +5,7 @@ import PlaylistCard from "@/components/playlist-card";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { getSearchResults } from "@/app/search/actions";
+import { getSearchResults } from "@/app/actions";
 import { cn } from "@/lib/utils";
 
 export default function Search() {

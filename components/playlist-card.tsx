@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import PlayNowIcon from "@/assets/icons/play-now.svg";
 import { Playlist } from "@/app/types";
+import PlayButton from "@/components/play-button";
 
 interface Props {
   playlist: Playlist;
@@ -19,12 +19,10 @@ export default function PlaylistCard({ playlist }: Props) {
           width={200}
           height={200}
         />
-        <button
-          aria-label="Start playing"
-          className="absolute bottom-2 right-2 z-10 flex size-12 translate-y-2 cursor-default items-center justify-center rounded-full bg-spotigreen opacity-0 shadow-[0_8px_8px_rgb(0_0_0_/_30%)] transition-all hover:scale-105 hover:brightness-105 group-hover:translate-y-0 group-hover:opacity-100"
-        >
-          <PlayNowIcon role="img" aria-hidden className="size-6 text-black" />
-        </button>
+        <PlayButton
+          playlistId={playlist.id}
+          className="absolute bottom-2 right-2 z-10 flex size-12 translate-y-2 items-center justify-center rounded-full bg-spotigreen opacity-0 shadow-[0_8px_8px_rgb(0_0_0_/_30%)] transition-all hover:scale-105 hover:brightness-105 group-hover:translate-y-0 group-hover:opacity-100"
+        />
       </div>
       <div className="flex min-h-16 justify-between">
         <Link

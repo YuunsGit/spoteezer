@@ -32,7 +32,7 @@ export default async function RootLayout({
           <Header />
           <main className="pretty-scroll relative overflow-y-auto overscroll-contain text-white @container [grid-area:main]">
             <BackgroundGradient />
-            <section className="max-w-[1955px] px-4 pt-6 lg:px-8">
+            <section className="max-w-[1955px] px-4 py-6 lg:px-8">
               {children}
             </section>
           </main>

@@ -1,17 +1,19 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import SearchIcon from "@/assets/icons/search.svg";
 import CrossIcon from "@/assets/icons/close.svg";
 
 export default function SearchBar() {
+  const params = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
   const [query, setQuery] = useState("");
 
+  const queryParam = params.get("q");
+
   useEffect(() => {
-    if (!query) router.push("/search");
     if (query.length < 4) return;
     router.push(`/search?q=${query}`);
   }, [query, router]);
@@ -19,6 +21,10 @@ export default function SearchBar() {
   useEffect(() => {
     if (!pathname.startsWith("/search")) setQuery("");
   }, [pathname]);
+
+  useEffect(() => {
+    if (queryParam) setQuery(queryParam);
+  }, [queryParam]);
 
   if (!pathname.startsWith("/search")) return null;
 

@@ -36,22 +36,12 @@ function Tab({
       )}
       {...(currentPathname === pathname && { "aria-current": "page" })}
     >
-      <Icon
-        role="img"
-        aria-hidden
-        className={cn(
-          "size-6",
-          currentPathname === pathname ? "hidden" : "block",
-        )}
-      />
-      <ActiveIcon
-        role="img"
-        aria-hidden
-        className={cn(
-          "size-6",
-          currentPathname === pathname ? "block" : "hidden",
-        )}
-      />
+      {currentPathname === pathname ? (
+        <ActiveIcon role="img" aria-hidden className="size-6" />
+      ) : (
+        <Icon role="img" aria-hidden className="size-6" />
+      )}
+
       {children}
     </Link>
   );
@@ -76,7 +66,11 @@ export default function SidebarTabs() {
           </Tab>
         </li>
         <li className="px-2">
-          <Tab icon={LibraryIcon} activeIcon={LibraryActiveIcon} pathname="/">
+          <Tab
+            icon={LibraryIcon}
+            activeIcon={LibraryActiveIcon}
+            pathname="/library"
+          >
             Library
           </Tab>
         </li>
