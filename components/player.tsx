@@ -62,6 +62,17 @@ export default function Player() {
 
   useEffect(() => {
     const handleSpacebarPress = (event: KeyboardEvent) => {
+      if (event.target instanceof HTMLElement) {
+        const tagName = event.target.tagName;
+        if (
+          tagName === "INPUT" ||
+          tagName === "TEXTAREA" ||
+          tagName === "SELECT"
+        ) {
+          return;
+        }
+      }
+
       if (event.code === "Space") {
         event.preventDefault();
         handlePlayButton();
@@ -164,12 +175,7 @@ export default function Player() {
           </div>
           <button
             onClick={handlePlayButton}
-            disabled={
-              !currentPlaylistId ||
-              !tracks?.length ||
-              pivot === null ||
-              pivot === tracks.length - 1
-            }
+            disabled={!currentPlaylistId || !tracks?.length || pivot === null}
             aria-label="Play"
             className="flex size-8 items-center justify-center rounded-full bg-white text-black outline-none ring-0 hover:scale-105 disabled:pointer-events-none disabled:opacity-50"
           >
@@ -181,7 +187,12 @@ export default function Player() {
           </button>
           <div className="flex items-center justify-center gap-2">
             <button
-              disabled={!currentPlaylistId || !tracks?.length || pivot === null}
+              disabled={
+                !currentPlaylistId ||
+                !tracks?.length ||
+                pivot === null ||
+                pivot === tracks.length - 1
+              }
               onClick={skipForward}
               role="switch"
               aria-checked="false"
