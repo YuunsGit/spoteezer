@@ -95,6 +95,7 @@ export default function Player() {
           <>
             <div className="group relative flex-shrink-0 shadow-[0_0_10px_rgb(0_0_0_/_30%)]">
               <Image
+                unoptimized
                 src={tracks?.[pivot || 0]?.album.cover_medium || UnknownTrack}
                 draggable="false"
                 alt="artist"
