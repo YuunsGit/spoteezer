@@ -12,6 +12,7 @@ export default function PlaylistCard({ playlist }: Props) {
     <div className="group relative overflow-hidden rounded-md bg-spotidark p-4 transition-colors duration-300 hover:bg-secondary">
       <div className="relative mb-4 w-fit overflow-hidden rounded shadow-[0_8px_24px_rgb(0_0_0_/_50%)]">
         <Image
+          unoptimized
           src={playlist.picture_medium}
           alt="Playlist"
           draggable="false"

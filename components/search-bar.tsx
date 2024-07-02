@@ -32,6 +32,7 @@ export default function SearchBar() {
     <Suspense>
       <form
         aria-label="Search for playlists"
+        onSubmit={(e) => e.preventDefault()}
         className="relative mr-auto flex-shrink flex-grow-0 basis-[364px]"
       >
         <SearchIcon
