@@ -18,6 +18,7 @@ export default function Hero({ playlists }: Props) {
             className="group relative flex h-16 overflow-hidden rounded bg-[hsla(0,0%,100%,.1)] transition-colors duration-300 hover:bg-[hsla(0,0%,100%,.2)] @4xl:h-20"
           >
             <Image
+              unoptimized
               src={playlist.picture_medium}
               alt="Playlist"
               draggable="false"
